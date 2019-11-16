@@ -1,0 +1,10 @@
+# credentials are stored in a .env file
+version: '3.7'
+
+services:
+
+  redis:
+    image: redis:5
+    restart: always
+    ports:
+      - 6379:6379
