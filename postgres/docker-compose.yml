@@ -1,0 +1,25 @@
+# credentials stored in .env file
+version: '3.7'
+
+services:
+  postgres:
+    env_file:
+      - .env
+    image: postgres:12
+    restart: always
+    environment:
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - 5432:5432
+
+  pgadmin:
+    env_file:
+      - .env
+    image: dpage/pgadmin4
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    ports:
+      - 8000:80
+    
