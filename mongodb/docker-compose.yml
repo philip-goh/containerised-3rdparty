@@ -1,4 +1,4 @@
-# Use root/example as user/password credentials
+# credentials are stored in a .env file
 version: '3.7'
 
 services:
